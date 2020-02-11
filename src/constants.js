@@ -1,1 +1,4 @@
-THE_MOVIE_DB_API_URL = 'https://api.themoviedb.org/3';
+export const THE_MOVIE_DB_API_URL = 'https://api.themoviedb.org/3';
+
+// REDUX
+export const HOME_LOADING = 'HOME_LOADING';
