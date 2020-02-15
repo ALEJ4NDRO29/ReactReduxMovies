@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import { Container } from "react-bootstrap";
 import { connect } from "react-redux";
 import agent from '../../agent';
-import { HOME_LOADING } from "../../constants";
-import MoviesList from "./MoviesList";
+import { HOME_LOADING } from "../../constants/constants";
+import MoviesList from "../movie/MoviesList";
 import './style.css';
+import Loading from "../common/Loading";
 
 
 const mapStateToProps = state => ({
@@ -25,7 +26,7 @@ class Home extends Component {
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
     render() {
         if (!this.props.movies) {
-            return <div>Loading...</div>;
+            return <Loading/>;
         }
 
         return (

@@ -1,4 +1,4 @@
-import { HOME_LOADING } from "../constants";
+import { HOME_LOADING } from "../constants/constants";
 
 export default (state = {}, action) => {
     switch (action.type) {

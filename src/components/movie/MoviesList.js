@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card, Button } from "react-bootstrap";
-
+import { Card } from "react-bootstrap";
+import { Link } from 'react-router-dom';
 
 const MoviesList = props => (
         props.movies.results.map((movie, i) => {
@@ -11,10 +11,9 @@ const MoviesList = props => (
                         <Card.Body>
                             <Card.Title className="card-text">{movie.title}</Card.Title>
                             <Card.Text className="card-text">
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
+                                {movie.overview}
                             </Card.Text>
-                            <Button className="to-bottom btn-block" variant="dark">Visit</Button>
+                            <Link to={`/movie/${movie.id}`} className="to-bottom btn btn-dark btn-block">Visit</Link>
                         </Card.Body>
                     </div>
                 </div>
