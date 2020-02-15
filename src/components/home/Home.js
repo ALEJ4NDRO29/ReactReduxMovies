@@ -1,8 +1,11 @@
 import React, { Component } from "react";
+import { Container } from "react-bootstrap";
 import { connect } from "react-redux";
-import { HOME_LOADING } from "../../constants";
-
 import agent from '../../agent';
+import { HOME_LOADING } from "../../constants";
+import MoviesList from "./MoviesList";
+import './style.css';
+
 
 const mapStateToProps = state => ({
     movies: state.home.movies
@@ -17,28 +20,20 @@ class Home extends Component {
 
     constructor(props) {
         super(props);
-        console.log('Implements');
-
         this.props.onLoad(agent.Movie.disover());
     }
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
     render() {
-        console.log('props', this.props.movies);
         if (!this.props.movies) {
             return <div>Loading...</div>;
         }
 
         return (
-            <div>
-                {this.props.movies.results.map((movie, i) => {
-                    return (
-                        <div key={i}>
-                            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}/><br></br>
-                            {movie.title}
-                        </div>
-                    );
-                })}
-            </div>
+            <Container className="black">
+                <div className="row movie-container">
+                    <MoviesList className="black" movies={this.props.movies}/>
+                </div>
+            </Container>
         );
     }
 }
