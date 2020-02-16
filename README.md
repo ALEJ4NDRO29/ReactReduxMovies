@@ -1,3 +1,10 @@
+## Config 
+Add The Movie DB api key and remove .template from file name
+
+    ./src/constants/credentials.js.template
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
