@@ -88,10 +88,12 @@ class MovieDetails extends Component {
                                 {genre}
                             </Col>
 
-                            {/* WEBSITE */}
-                            <Col className="bot-spacing" xl="12" lg="12" md="12" sm="12" xs="12">
-                                <a rel="noopener noreferrer" target="_blank" href={movie.homepage}>Web Oficial</a>
-                            </Col>
+                            {/* WEBSITE (Mostrar solo si existe) */}
+                            {movie.homepage ? 
+                                <Col className="bot-spacing" xl="12" lg="12" md="12" sm="12" xs="12">
+                                    <a rel="noopener noreferrer" target="_blank" href={movie.homepage}>Web Oficial</a>
+                                </Col>
+                            : null}
 
                             {/* INFORMACIÓN */}
                             <Col xl="12" lg="12" md="12" sm="12" xs="12">
