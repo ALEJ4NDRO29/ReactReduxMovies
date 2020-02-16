@@ -8,6 +8,9 @@ import { createBrowserHistory } from 'history';
 export const history = createBrowserHistory();
 const myRouterMiddleware = routerMiddleware(history);
 
+// Crear y aplicar middlewares
+// Inspirado en la aplicación de ejemplo de thinkster
+// https://github.com/gothinkster/react-redux-realworld-example-app/blob/master/src/store.js
 const getMiddleware = () => {
     const loggerMiddleware = createLogger();
 

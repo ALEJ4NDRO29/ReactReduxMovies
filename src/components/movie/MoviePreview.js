@@ -2,6 +2,7 @@ import React from 'react';
 import { Card } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 
+// Cada película que aparece en el home
 const MoviePreview = props => (
     <div className="card">
         <Card.Img variant="top" alt={props.movie.title} src={

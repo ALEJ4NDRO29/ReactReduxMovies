@@ -7,6 +7,8 @@ import { Container, Col, Row, ProgressBar } from "react-bootstrap";
 
 import './style.css';
 
+// Página de detalles para una película
+
 const mapStateToProps = state => ({
     movie: state.movie.movie
 });
@@ -22,16 +24,18 @@ class MovieDetails extends Component {
 
     constructor(props) {
         super(props);
-        console.log(this.props.match.params.id);
+
+        // Solicitar película por id pasada en la URL
         this.props.onLoad(agent.Movie.details(this.props.match.params.id));
     }
 
     componentWillUnmount() {
+        // ELiminar datos al salir
         this.props.onUnload();
     }
 
     render() {
-        // console.log(this.props.movie);
+        // Icono de carga hasta que responda la API
         if (!this.props.movie) {
             return (
                 <Loading />

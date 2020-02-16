@@ -2,6 +2,7 @@ import React from 'react';
 
 import MoviePreview from './MoviePreview';
 
+// Listado que aparece en el Home
 const MoviesList = props => (
     props.movies.results.map((movie, i) => {
         return (

@@ -7,8 +7,11 @@ class App extends Component {
 
 	render() {
 		return (
+			// Cargar router
 			<Router>
 				<Header />
+				{/* Componente para
+				 	cargar las rutas de la aplicación */}
 				<Routes />
 			</Router>
 		);

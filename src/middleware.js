@@ -1,33 +1,19 @@
+// Middleware para recoger los datos en las llamadas a API
+// De este modo evitar crear un fichero de actions
 
+// Inspirado en la aplicación de ejemplo de thinkster
+// https://github.com/gothinkster/react-redux-realworld-example-app/blob/master/src/middleware.js
 const promiseMiddleware = store => next => action => {
     if (isPromise(action.payload)) {
-        // store.dispatch({ type: ASYNC_START, subtype: action.type });
-
-        // const currentView = store.getState().viewChangeCounter;
-        // const skipTracking = action.skipTracking;
 
         action.payload.then(
             res => {
-                // const currentState = store.getState();
-                // if (!skipTracking && currentState.viewChangeCounter !== currentView) {
-                //     return;
-                // }
-                console.log('RESULT', res);
                 action.payload = res;
-                // store.dispatch({ type: ASYNC_END, promise: action.payload });
                 store.dispatch(action);
             },
             error => {
-                // const currentState = store.getState();
-                // if (!skipTracking && currentState.viewChangeCounter !== currentView) {
-                //     return;
-                // }
-                console.log('ERROR', error);
                 action.error = true;
                 action.payload = error.response.body;
-                // if (!action.skipTracking) {
-                //     store.dispatch({ type: ASYNC_END, promise: action.payload });
-                // }
                 store.dispatch(action);
             }
         );

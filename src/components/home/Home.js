@@ -20,10 +20,13 @@ const mapDispatchToProps = dispatch => ({
         dispatch({ type: HOME_UNLOAD })
 });
 
+// Home. Listado de películas
 class Home extends Component {
 
     constructor(props) {
         super(props);
+
+        // Solicitar películas
         this.props.onLoad(agent.Movie.disover());
     }
 

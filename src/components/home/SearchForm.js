@@ -5,6 +5,7 @@ import { MOVIES_SEARCH } from "../../constants/constants";
 import { connect } from "react-redux";
 import agent from "../../agent";
 
+// Buscador de películas
 
 const mapStateToProps = state => ({});
 
@@ -12,7 +13,6 @@ const mapDispatchToProps = dispatch => ({
     onSearch: payload =>
         dispatch({ type: MOVIES_SEARCH, payload })
 });
-
 
 class SearchForm extends Component {
 
