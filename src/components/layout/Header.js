@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-import './Header.css'
+import './style.css'
 
 class Header extends Component {
     render() {

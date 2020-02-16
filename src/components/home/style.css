@@ -15,3 +15,17 @@
     bottom: 5px;
     left: 0;
 }
+
+.search-form {
+    margin-bottom: 25px;
+}
+
+.btn-search {
+    border-top-right-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+}
+
+.search-input {
+    border-top-left-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
+}
