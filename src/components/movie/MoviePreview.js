@@ -13,7 +13,7 @@ const MoviePreview = props => (
         <Card.Body>
             <Card.Title className="card-text">{props.movie.title}</Card.Title>
             <Card.Text className="card-text">
-                {props.movie.overview}
+                {props.movie.release_date}
             </Card.Text>
             <Link to={`/movie/${props.movie.id}`} className="to-bottom btn btn-dark btn-block">Visit</Link>
         </Card.Body>
