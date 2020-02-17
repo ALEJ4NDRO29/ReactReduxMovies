@@ -45,12 +45,25 @@ class MovieDetails extends Component {
         const movie = this.props.movie;
         const rate = movie.vote_average * 10;
         
+        // Esta variable se utilizará para pintar 
+        // la barra de puntuación de distintos colores
+        let variant = 'info';
+        if(rate > 60) {
+            variant = 'success';
+        } else if(rate > 20) {
+            variant = 'warning';
+        } else {
+            variant = 'danger';
+        }
+
         // MOSTRAR GÉNERO
         let genre = '';
         movie.genres.forEach(element => {
             genre += element.name + ' | ';
         });
         genre = genre.substring(0, genre.length - 2);
+
+
 
         return (
             <Container className="black">
@@ -62,7 +75,7 @@ class MovieDetails extends Component {
                 </h6>
                 <Row>
                     {/* PORTADA */}
-                    <Col xl="4" lg="4" md="4" sm="12" xs="12">
+                    <Col className="bot-spacing" xl="4" lg="4" md="4" sm="12" xs="12">
                         {/* CONDICIONAL PARA UTILIZAR UNA IMAGEN POR DEFECTO SI EXISTE */}
                         <img className="img-thumbnail" alt={movie.title} src={
                                 movie.poster_path ?
@@ -75,11 +88,11 @@ class MovieDetails extends Component {
                         <Row>
                             {/* RATE */}
                             <Col xl="10" lg="10" md="10" sm="12" xs="12">
-                                <ProgressBar label={`${rate}%`} variant="success" now={rate} />
+                                <ProgressBar label={`${rate}%`} variant={variant} now={rate} />
                             </Col>
 
                             {/* RELEASE */}
-                            <Col className="bot-spacing" xl="2" lg="2" md="2" sm="12" xs="12">
+                            <Col xl="2" lg="2" md="2" sm="12" xs="12">
                                 {movie.release_date}
                             </Col>
 
