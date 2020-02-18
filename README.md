@@ -3,6 +3,16 @@ Add The Movie DB api key and remove .template from file name
 
     ./src/constants/credentials.js.template
 
+## Home
+
+![Home](doc/img/home.png)
+
+
+## Details
+
+![Details](doc/img/details.png)
+
+
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
